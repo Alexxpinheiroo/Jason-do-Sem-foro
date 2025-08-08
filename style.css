@@ -1,0 +1,363 @@
+/* Importação de fontes temáticas */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap');
+
+/* Classe para desabilitar a rolagem da página */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Reset básico e estilização do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    background-color: #121212;
+    line-height: 1.6;
+    background-image: url('imagens/fundo-lateral.webp'), url('imagens/fundo-lateral.webp');
+    background-repeat: no-repeat;
+    background-position: left top, right top;
+    background-size: 500px;
+    background-attachment: fixed;
+}
+
+/* Estilização dos títulos */
+h1, h2 {
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-top: 2em;
+}
+
+/* Estilização de seções e contêineres */
+header, section, footer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilização do cabeçalho */
+header p {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-style: italic;
+    color: #f0f0f0;
+    font-size: 1.2em;
+}
+
+/* Estilização da seção de serviços e contato */
+section p, section li {
+    font-size: 1.1em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilização do botão ou link de agendamento */
+.agende {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0000;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animação para o texto de agendamento */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilização de links */
+a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f0f0f0;
+}
+
+/* Estilização da imagem do sticker */
+.logo-jason {
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    max-width: 100%;
+}
+
+/* Estilização do menu de navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f0f0f0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #1a1a1a;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -10%);
+        transition: all 0.5s ease-out;
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Estilização do rodapé para torná-lo mais discreto */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+    color: #777;
+    opacity: 0.8;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Estilo para o ícone flutuante do WhatsApp */
+#whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+#whatsapp-float img {
+    width: 40px;
+}
+
+#whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo da nova seção de contato */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 3em;
+    color: #ff0000;
+}
+
+.contact-header p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 20px;
+    color: #ccc;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #ff0000;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #f0f0f0;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #cc0000;
+}
+
+/* Media query para tornar o layout de contato em coluna no celular */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+/* Estilo para o efeito de gotas de sangue */
+.blood-drip-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.blood-drip {
+    position: absolute;
+    top: -50px;
+    width: 10px;
+    height: 50px;
+    background-color: #8B0000;
+    border-radius: 50%;
+    animation: bloodDrip 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes bloodDrip {
+    0% { transform: translateY(0); opacity: 0.7; }
+    80% { opacity: 0.9; }
+    100% { transform: translateY(110vh); opacity: 0; }
+}
