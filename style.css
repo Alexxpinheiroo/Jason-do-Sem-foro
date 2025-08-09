@@ -376,3 +376,12 @@ footer p {
     text-decoration: none;
     font-weight: bold;
 }
+/* CSS para centralizar a seção e garantir a responsividade da imagem */
+        #galeria {
+            text-align: center;
+        }
+
+        #galeria img {
+            max-width: 100%; /* A imagem não excederá a largura do contêiner */
+            height: auto;    /* Mantém a proporção da imagem */
+        }
