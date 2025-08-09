@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <audio src="musica-jason.mp3" loop controls></audio>
+ <audio id="musicaFundo" src="musica-jason.mp3" loop autoplay muted></audio>
 
     <div class="blood-drip-container">
         <div class="blood-drip" style="left: 5%; animation-delay: 0s;"></div>
@@ -172,6 +172,39 @@
 
                 lastScrollY = currentScrollY;
             });
+        });
+    </script>
+
+    <script>
+        // Seleciona o elemento de áudio pelo ID
+        var musica = document.getElementById("musicaFundo");
+        var volumeAtual = 0;
+        var volumeFinal = 0.5; // Volume máximo desejado, ajuste de 0.0 a 1.0
+        var tempoFade = 5000;  // Tempo total do fade in em milissegundos (5 segundos)
+        var intervalo = 50;    // Intervalo de tempo entre cada aumento de volume
+
+        // Define o volume inicial como 0
+        musica.volume = volumeAtual;
+
+        // Adiciona um listener para a primeira interação do usuário na página
+        document.addEventListener("click", function() {
+            // Verifica se a música está pausada para evitar iniciar múltiplas vezes
+            if (musica.paused) {
+                // Remove o atributo 'muted' para permitir o som
+                musica.muted = false;
+                musica.play();
+
+                // Inicia o intervalo de aumento de volume
+                var fade = setInterval(function() {
+                    // Aumenta o volume gradualmente
+                    if (musica.volume < volumeFinal) {
+                        musica.volume += volumeFinal / (tempoFade / intervalo);
+                    } else {
+                        // Para o intervalo quando o volume final é atingido
+                        clearInterval(fade);
+                    }
+                }, intervalo);
+            }
         });
     </script>
 </body>
