@@ -361,3 +361,18 @@ footer p {
     80% { opacity: 0.9; }
     100% { transform: translateY(110vh); opacity: 0; }
 }
+.visitor-counter {
+    /* Estilos para alinhar a frase e o contador na mesma linha */
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+}
+.statcounter {
+    /* Estilos para que o número do contador tenha a mesma aparência da frase */
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+}
